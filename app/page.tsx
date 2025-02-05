@@ -2,9 +2,11 @@ import { AppBar, Box, Button, IconButton, Step, StepLabel, Stepper, Toolbar, Typ
 import { AccessAlarm, ThreeDRotation, Menu } from "@mui/icons-material";
 
 const steps = [
-  'step 1',
-  'step 2',
-  'step 3',
+  'Ficha de visto pendente',
+  'Analisando documentos',
+  'Aguardando entrevista',
+  'Visto aprovado',
+  'Passaporte recebido',
 ]
 
 export default function Home() {
@@ -20,6 +22,21 @@ export default function Home() {
           </Typography>
         </Toolbar>
       </AppBar>
+
+      <Typography>Status da applicação: Analizando documentos</Typography>
+      <div>
+        <Typography>
+          Sua entrevista está prevista para o dia 5 de março
+        </Typography>
+      </div>
+      <div>
+        <Typography>
+          O recebimento do seu passaporte está previsto para o dia 5 de março
+        </Typography>
+      </div> 
+
+
+
       <Box sx={{ width: '100%'}} className="my-10">
         <Stepper activeStep={1} alternativeLabel>
           {steps.map((label) => (
