@@ -3,8 +3,8 @@ import { AccessAlarm, ThreeDRotation, Menu } from "@mui/icons-material";
 
 const steps = [
   'step 1',
-  'step 1',
-  'step 1',
+  'step 2',
+  'step 3',
 ]
 
 export default function Home() {
@@ -20,8 +20,8 @@ export default function Home() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box sx={{ width: '100%'}} className="m-4">
-        <Stepper>
+      <Box sx={{ width: '100%'}} className="my-10">
+        <Stepper activeStep={1} alternativeLabel>
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
