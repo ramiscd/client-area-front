@@ -12,7 +12,7 @@ const steps = [
 
 export default function Home() {
   return (
-    <div className="bg-slate-100 h-screen">
+    <div className="bg-slate-100 h-screen ">
       <AppBar position="static">
         <Toolbar variant="dense">
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
