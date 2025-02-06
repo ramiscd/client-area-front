@@ -1,5 +1,6 @@
 import { AppBar, Box, Button, IconButton, Paper, Step, StepLabel, Stepper, Toolbar, Typography } from "@mui/material";
 import { AccessAlarm, ThreeDRotation, Menu, CalendarMonth } from "@mui/icons-material";
+import Image from 'next/image'
 
 const steps = [
   'Ficha de visto pendente',
@@ -51,8 +52,22 @@ export default function Home() {
           </Stepper>
         </Box>
 
-        <Paper elevation={3}>
-          <h1>Oi</h1>
+        <Paper elevation={3} className="flex justify-between">
+          <div className="flex">
+            <Image
+              src="/round-usa.png"
+              width={100}
+              height={100}
+              alt="Picture of the author"
+            />
+            <div>
+              <Typography>Eua - Turismo</Typography>
+              <Typography>João da Silva</Typography>
+            </div>
+          </div>
+
+          <h1>oi</h1>
+          <h1>oi</h1>
         </Paper>
 
       </div>
