@@ -3,8 +3,8 @@ import { AccessAlarm, ThreeDRotation, Menu, CalendarMonth } from "@mui/icons-mat
 import Image from 'next/image'
 
 const steps = [
-  'Ficha de visto pendente',
-  'Analisando documentos',
+  'Ficha de visto pendente 01/02/2025',
+  'Analisando documentos 07/02/2025',
   'Aguardando entrevista',
   'Visto aprovado',
   'Passaporte recebido',
@@ -26,7 +26,7 @@ export default function Home() {
 
       <div className="m-6">
 
-        <Typography className="text-black">Status da applicação: Analizando documentos</Typography>
+        <Typography className="text-lg">Status da applicação: Analizando documentos</Typography>
         <div className="flex">
           <CalendarMonth sx={{ color: "black" }} />
           <Typography className="text-black">
@@ -52,7 +52,7 @@ export default function Home() {
           </Stepper>
         </Box>
 
-        <Paper elevation={3} className="flex justify-between">
+        <Paper elevation={3} className="flex justify-between p-4">
           <div className="flex">
             <Image
               src="/round-usa.png"
@@ -66,8 +66,16 @@ export default function Home() {
             </div>
           </div>
 
-          <h1>oi</h1>
-          <h1>oi</h1>
+          <div>
+            <div className="flex">
+              <Typography>Status 🟢</Typography>
+              <Typography>Analisando documentos</Typography>
+            </div>
+            <div className="flex mt-2">
+              <Typography className="pt-2 pr-2">Preenchimento da ficha</Typography>
+              <Button variant="contained">Editar</Button>
+            </div>
+          </div>
         </Paper>
 
       </div>
