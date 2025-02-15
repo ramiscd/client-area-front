@@ -1,5 +1,5 @@
 import { AppBar, Box, Button, IconButton, Paper, Step, StepLabel, Stepper, Toolbar, Typography } from "@mui/material";
-import { AccessAlarm, ThreeDRotation, Menu, CalendarMonth, Edit } from "@mui/icons-material";
+import { AccessAlarm, ThreeDRotation, Menu, CalendarMonth, Edit, LiveHelp } from "@mui/icons-material";
 import Image from 'next/image'
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
@@ -78,22 +78,22 @@ export default function Home() {
             </div>
             <div className="flex mt-2">
               <Typography className="pt-2 pr-2 text-gray-600">Preenchimento da ficha</Typography>
-              <Button variant="contained" startIcon={<Edit/>}>Editar</Button>
+              <Button variant="contained" startIcon={<Edit />}>Editar</Button>
             </div>
             <div className="flex mt-2">
               <Typography className="pt-2 pr-2 text-gray-600">Pagamento da taxa</Typography>
-              <Button variant="contained" startIcon={<Edit/>}>Pago</Button>
+              <Button variant="contained" startIcon={<Edit />}>Pago</Button>
             </div>
             <div className="flex mt-2">
               <Typography className="pt-2 pr-2 text-gray-600">Upload de documento</Typography>
-              <Button variant="contained" startIcon={<Edit/>}>Editar</Button>
+              <Button variant="contained" startIcon={<Edit />}>Editar</Button>
             </div>
           </div>
         </Paper>
 
       </div>
 
-
+      <LiveHelp className="absolute bottom-4 right-4" />
     </div>
   );
 }
