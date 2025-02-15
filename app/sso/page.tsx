@@ -7,8 +7,8 @@ export default function SignIn() {
       <Paper elevation={20} className="w-fit flex flex-col items-center p-10 gap-6">
         <h1>Login</h1>
         <p>Bem vindo, por favor insira suas credenciais</p>
-        <Input placeholder="Email"/>
-        <Input placeholder="Senha"/>
+        <Input placeholder="Email" />
+        <Input placeholder="Senha" />
         <Button variant="contained">Acessar</Button>
       </Paper>
     </div>
