@@ -1,5 +1,5 @@
 import { AppBar, Box, Button, IconButton, Paper, Step, StepLabel, Stepper, Toolbar, Typography } from "@mui/material";
-import { AccessAlarm, ThreeDRotation, Menu, CalendarMonth, Edit, LiveHelp } from "@mui/icons-material";
+import { Menu, CalendarMonth, Edit, LiveHelp } from "@mui/icons-material";
 import Image from 'next/image'
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
