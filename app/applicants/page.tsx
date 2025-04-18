@@ -7,8 +7,20 @@ import { json } from "stream/consumers";
 
 type Applicant = {
   id: number
-  user_id: number
-  form_id: number
+  user: {
+    id: number
+    full_name: string
+    email: string
+  }
+  form: {
+    id: number
+    country: string
+    question: string
+    document_passport: boolean
+    document_rg: boolean
+    payment: boolean
+    form_type: string
+  }
 }
 
 
@@ -25,7 +37,6 @@ export default async function Applicants() {
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <Menu />
           </IconButton>
-          <>${console.log("dados dos applicants:", applicants)}</>
           <Typography variant="h6" color="inherit" component="div">
             Client area
           </Typography>
@@ -36,47 +47,28 @@ export default async function Applicants() {
       <Box className="flex flex-col items-center m-10">
         <Typography variant="h4">Applicantes</Typography>
         <Typography>acompanhe o status das aplicações deste usuário</Typography>
-
-        <Paper elevation={3} className="flex justify-between p-8 items-center m-2">
-          <div className="flex mr-20">
-            <Image
-              src="/round-usa.png"
-              width={100}
-              height={100}
-              alt="Picture of the author"
-            />
-            <div className="self-center ">
-              <Typography className="!font-bold">Eua - Turismo</Typography>
-              <Typography className="!font-bold">João da Silva</Typography>
+        {applicants.map((applicant) => (
+          <Paper elevation={3} className="flex justify-between p-8 items-center m-2">
+            <div className="flex mr-20">
+              <Image
+                src="/round-usa.png"
+                width={100}
+                height={100}
+                alt="Picture of the author"
+              />
+              <div className="self-center ">
+                <Typography className="!font-bold">{applicant.form.country} - {applicant.form.form_type}</Typography>
+                <Typography className="!font-bold">{applicant.user.full_name}</Typography>
+              </div>
             </div>
-          </div>
-          <div className="">
-            <div className="flex mt-2">
-              <Button variant="contained" startIcon={<Visibility />}>acompanhar aplicação</Button>
+            <div className="">
+              <div className="flex mt-2">
+                <Button variant="contained" startIcon={<Visibility />}>acompanhar aplicação</Button>
+              </div>
             </div>
-          </div>
-        </Paper>
-
-        <Paper elevation={3} className="flex justify-between p-8 items-center m-2">
-          <div className="flex mr-20">
-            <Image
-              src="/round-usa.png"
-              width={100}
-              height={100}
-              alt="Picture of the author"
-            />
-            <div className="self-center ">
-              <Typography className="!font-bold">Eua - Turismo</Typography>
-              <Typography className="!font-bold">Maria da Silva</Typography>
-            </div>
-          </div>
-          <div className="">
-            <div className="flex mt-2">
-              <Button variant="contained" startIcon={<Visibility />}>acompanhar aplicação</Button>
-            </div>
-          </div>
-        </Paper>
-
+          </Paper>
+        ))
+        }
       </Box>
     </div>
   )
