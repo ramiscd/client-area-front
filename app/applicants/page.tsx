@@ -1,9 +1,23 @@
 import { Menu, Visibility } from "@mui/icons-material";
 import { AppBar, Box, Button, IconButton, Paper, Toolbar, Typography } from "@mui/material";
 import Image from 'next/image'
+// import applicants, { index } from '../api/applicants/index'
+import { GetServerSideProps } from "next";
+import { json } from "stream/consumers";
+
+type Applicant = {
+  id: number
+  user_id: number
+  form_id: number
+}
 
 
-export default function Applicants() {
+export default async function Applicants() {
+  const res = await fetch('http://localhost:3000/applications', {
+    cache: 'no-store',
+  })
+  const applicants: Applicant[] = await res.json()
+
   return (
     <div>
       <AppBar position="static">
@@ -11,6 +25,7 @@ export default function Applicants() {
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <Menu />
           </IconButton>
+          <>${console.log("dados dos applicants:", applicants)}</>
           <Typography variant="h6" color="inherit" component="div">
             Client area
           </Typography>
