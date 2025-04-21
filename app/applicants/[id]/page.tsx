@@ -15,7 +15,7 @@ const steps = [
   'Passaporte recebido',
 ]
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="bg-slate-100 h-screen">
       <AppBar position="static">

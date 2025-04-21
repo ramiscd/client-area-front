@@ -1,9 +1,9 @@
 import { Menu, Visibility } from "@mui/icons-material";
 import { AppBar, Box, Button, IconButton, Paper, Toolbar, Typography } from "@mui/material";
 import Image from 'next/image'
-// import applicants, { index } from '../api/applicants/index'
 import { GetServerSideProps } from "next";
 import { json } from "stream/consumers";
+import Link from "next/link";
 
 type Applicant = {
   id: number
@@ -63,7 +63,7 @@ export default async function Applicants() {
             </div>
             <div className="">
               <div className="flex mt-2">
-                <Button variant="contained" startIcon={<Visibility />}>acompanhar aplicação</Button>
+                <Button variant="contained" startIcon={<Visibility />}><Link href={`applicants/${applicant.id}`}>acompanhar aplicação</Link></Button>
               </div>
             </div>
           </Paper>
