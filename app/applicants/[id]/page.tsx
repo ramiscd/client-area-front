@@ -6,6 +6,25 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
+interface ApplicationData {
+  id: number;
+  user: {
+    id: number;
+    full_name: string;
+    email: string;
+  };
+  form: {
+    id: number;
+    country: string;
+    question: string;
+    document_passport: boolean;
+    document_rg: boolean;
+    payment: boolean;
+    form_type: string;
+  };
+}
+
+
 
 const steps = [
   'Ficha de visto pendente 01/02/2025',
@@ -15,9 +34,24 @@ const steps = [
   'Passaporte recebido',
 ]
 
-export default async function Home() {
+async function getApplicant(id: string): Promise<ApplicationData> {
+  const res = await fetch(`http://localhost:3000/applications/${id}`, {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    throw new Error(`Erro ao buscar o apicante ${id}`)
+  }
+
+  return res.json();
+}
+
+export default async function ApplicantPage({ params }: { params: { id: string } }) {
+  const applicant = await getApplicant(params.id);
+
   return (
     <div className="bg-slate-100 h-screen">
+      <>{console.log("dados do applicante", applicant)}</>
       <AppBar position="static">
         <Toolbar variant="dense">
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
