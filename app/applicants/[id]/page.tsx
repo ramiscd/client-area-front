@@ -100,8 +100,8 @@ export default async function ApplicantPage({ params }: { params: { id: string }
               alt="Picture of the author"
             />
             <div className="self-center ">
-              <Typography className="!font-bold">Eua - Turismo</Typography>
-              <Typography className="!font-bold">João da Silva</Typography>
+              <Typography className="!font-bold">{applicant.form.country}</Typography>
+              <Typography className="!font-bold">{applicant.user.full_name}</Typography>
             </div>
           </div>
 
@@ -110,15 +110,15 @@ export default async function ApplicantPage({ params }: { params: { id: string }
               <Typography className="!font-bold !mr-2">Status 🟢 </Typography>
               <Typography >Analisando documentos</Typography>
             </div>
-            <div className="flex mt-2">
+            <div className="flex mt-2 justify-between">
               <Typography className="pt-2 pr-2 text-gray-600">Preenchimento da ficha</Typography>
               <Button variant="contained" startIcon={<Edit />}>Editar</Button>
             </div>
-            <div className="flex mt-2">
+            <div className="flex mt-2 justify-between">
               <Typography className="pt-2 pr-2 text-gray-600">Pagamento da taxa</Typography>
               <Button variant="contained" startIcon={<Edit />}>Pago</Button>
             </div>
-            <div className="flex mt-2">
+            <div className="flex mt-2 justify-between">
               <Typography className="pt-2 pr-2 text-gray-600">Upload de documento</Typography>
               <Button variant="contained" startIcon={<Edit />}>Editar</Button>
             </div>
